@@ -8,36 +8,36 @@ namespace exam
     {
         private string duration1;
 
-        private string Getduration()
+        public string GetDuration()
         {
             return duration1;
         }
 
-        private void Setduration(string value)
+        public void SetDuration(string value)
         {
             duration1 = value;
         }
 
         double price;
 
-        private double Price()
+        public double GetPrice()
         {
             return price;
         }
 
-        private void Price(double value)
+        public void SetPrice(double value)
         {
             price = value;
         }
 
         int sizeGroup;
 
-        private int SizeGroup()
+        public int GetSizeGroup()
         {
             return sizeGroup;
         }
 
-        private void SizeGroup(int value)
+        public void SetSizeGroup(int value)
         {
             sizeGroup = value;
         }
