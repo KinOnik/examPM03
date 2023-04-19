@@ -49,7 +49,7 @@ namespace exam
                             groupInfo[j] = temp;
                         }
                     }
-                    if (groupInfo[j].GetPrice() > groupInfo[j + 1].GetPrice())
+                    else if (groupInfo[j].GetPrice() > groupInfo[j + 1].GetPrice())
                     {
                         Trip temp = groupInfo[j + 1];
                         groupInfo[j + 1] = groupInfo[j];
