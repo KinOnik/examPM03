@@ -23,13 +23,24 @@ namespace exam
             Console.WriteLine("\tЗаполнение массаива: ");
             for (int i = 0; i < groupInfo.Length; i++)
             {
-                Console.WriteLine($"\n\tГруппа №:{i+1} ");
+                Console.WriteLine($"\n\tГруппа №:{i + 1} ");
                 Console.Write("\n\t\tУкажите продолжительность: ");
                 groupInfo[i].SetDuration(Console.ReadLine());
-                Console.Write("\n\t\tУкажите цену: ");
-                groupInfo[i].SetPrice(Convert.ToDouble(Console.ReadLine()));
-                Console.Write("\n\t\tУкажите размер группы: ");
-                groupInfo[i].SetSizeGroup(Convert.ToInt32(Console.ReadLine()));
+                while (groupInfo[i].GetPrice() <= 0)
+                {
+                    Console.Write("\n\t\tУкажите цену: ");
+                    groupInfo[i].SetPrice(Convert.ToDouble(Console.ReadLine()));
+                    if(groupInfo[i].GetPrice() <= 0)
+                        Console.Write("\n\tЦена не может быть отрицательной.");
+
+                }
+                while (groupInfo[i].GetSizeGroup() <= 0)
+                {
+                    Console.Write("\n\t\tУкажите размер группы: ");
+                    groupInfo[i].SetSizeGroup(Convert.ToInt32(Console.ReadLine()));
+                    if (groupInfo[i].GetSizeGroup() <= 0)
+                        Console.Write("\n\tРазмер группы не может быть отрицательной.");
+                }
             }
         }
 
