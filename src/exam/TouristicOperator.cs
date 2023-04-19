@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace exam
@@ -53,6 +54,16 @@ namespace exam
                 }
             }
             Console.WriteLine("\tСортировка окончена.");
+        }
+
+        public void SaveInfoFile()
+        {
+            StreamWriter str = new StreamWriter("GroupInfo.txt");
+            for (int i = 0; i < groupInfo.Length; i++)
+            {
+                str.WriteLine($"Группа № {i+1}:\n\tПродолжительность: {groupInfo[i].GetDuration()}; Цена:{groupInfo[i].GetPrice()}; Размер группы: {groupInfo[i].GetSizeGroup()}");
+            }
+            str.Close();
         }
     }
 }
