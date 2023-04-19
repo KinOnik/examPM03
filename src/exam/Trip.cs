@@ -6,19 +6,27 @@ namespace exam
 {
     class Trip
     {
-        private string duration1;
+        private string duration;
+        private double price;
+        private int sizeGroup;
+
+        public Trip()
+        {
+            duration = "";
+            price = 0;
+            sizeGroup = 0;
+        }
 
         public string GetDuration()
         {
-            return duration1;
+            return duration;
         }
 
         public void SetDuration(string value)
         {
-            duration1 = value;
+            duration = value;
         }
 
-        double price;
 
         public double GetPrice()
         {
@@ -29,8 +37,6 @@ namespace exam
         {
             price = value;
         }
-
-        int sizeGroup;
 
         public int GetSizeGroup()
         {

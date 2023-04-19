@@ -9,9 +9,13 @@ namespace exam
     {
         Trip[] groupInfo;
 
-        TouristicOperator(int size)
+        public TouristicOperator(int size)
         {
             groupInfo = new Trip[size];
+            for(int i=0; i<size;i++)
+            {
+                groupInfo[i] = new Trip();
+            }
         }
 
         public void AddGroupInfo()
@@ -61,9 +65,10 @@ namespace exam
             StreamWriter str = new StreamWriter("GroupInfo.txt");
             for (int i = 0; i < groupInfo.Length; i++)
             {
-                str.WriteLine($"Группа № {i+1}:\n\tПродолжительность: {groupInfo[i].GetDuration()}; Цена:{groupInfo[i].GetPrice()}; Размер группы: {groupInfo[i].GetSizeGroup()}");
+                str.WriteLine($"Группа № {i+1}:\n\tПродолжительность: {groupInfo[i].GetDuration()};\n\tЦена:{groupInfo[i].GetPrice()};\n\tРазмер группы: {groupInfo[i].GetSizeGroup()}.\n");
             }
             str.Close();
+            Console.WriteLine("\tЗапись в файл произведена. Информация находится в файле \"GroupInfo.txt\".");
         }
     }
 }
